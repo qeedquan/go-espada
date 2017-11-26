@@ -300,7 +300,7 @@ func loadFont(name string, ptSize int) *sdlttf.Font {
 func loadImage(name string) *Image {
 	name = filepath.Join(conf.Assets, name)
 	sdl.Log("loading image %v", name)
-	rgba, err := imageutil.LoadFile(name)
+	rgba, err := imageutil.LoadRGBAFile(name)
 	ck(err)
 	rgba = imageutil.ColorKey(rgba, color.RGBA{0xff, 0, 0xff, 0xff})
 	return &Image{
